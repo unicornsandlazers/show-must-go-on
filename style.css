@@ -154,6 +154,22 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--violet); outlin
   gap: 10px;
 }
 .names .btn { border-radius: 16px; color: var(--ink); }
+.names .btn.answered {
+  display: grid; gap: 0;
+  padding-block: 8px;
+  color: var(--muted);
+  border: 1.5px dashed rgba(124, 77, 255, 0.3);
+  background: rgba(255, 255, 255, 0.35);
+  font-weight: 600;
+}
+.names .btn.answered .tag {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ok);
+}
+.names .btn.answered .tag.no { color: var(--muted); }
 
 .choices { display: grid; gap: 10px; }
 .choice, .vote-option {
