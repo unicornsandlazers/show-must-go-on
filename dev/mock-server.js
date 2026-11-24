@@ -42,6 +42,9 @@ function makeSheet(name) {
           for (let i = 0; i < nr; i++) out.push(data[r - 1 + i].slice(c - 1, c - 1 + nc).map((v) => (v === undefined ? '' : v)));
           return out;
         },
+        getDisplayValues() {
+          return this.getValues().map((row) => row.map((v) => (v === '' || v == null ? '' : String(v))));
+        },
         setValues(vals) {
           if (vals.length !== nr || vals.some((row) => row.length !== nc)) throw new Error('setValues size mismatch');
           ensure();

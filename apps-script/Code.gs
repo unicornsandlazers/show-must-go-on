@@ -107,9 +107,16 @@ function rows_(name) {
   return sh.getRange(2, 1, last - 1, sh.getLastColumn()).getValues();
 }
 
-function kv_(name) {
+function kv_(name, asShown) {
   var out = {};
-  rows_(name).forEach(function (r) {
+  var rows = rows_(name);
+  if (asShown && rows.length) {
+    // What the Sheet shows, so a date or time typed into Config is not turned
+    // into a long machine date like "Sat Nov 28 2026 00:00:00 GMT+0100".
+    var sh = sheet_(name);
+    rows = sh.getRange(2, 1, rows.length, 2).getDisplayValues();
+  }
+  rows.forEach(function (r) {
     var k = String(r[0]).trim();
     if (k) out[k] = r[1] === '' || r[1] === null ? '' : String(r[1]);
   });
@@ -144,7 +151,7 @@ function snapshot_() {
     players: players,
     rsvp: rsvp,
     votes: votes,
-    config: kv_(SHEET.config),
+    config: kv_(SHEET.config, true),
     state: {
       phase: st.phase || 'lobby',
       order: parseList_(st.order),
