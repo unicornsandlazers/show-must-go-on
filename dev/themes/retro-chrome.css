@@ -1,0 +1,13 @@
+/* C2 — Neon Chrome: blocky caps with stacked pink/cyan shadows + brush script */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Mr+Dafoe&family=Space+Grotesk:wght@400;600;700&display=swap');
+:root { --paper:#1e1238; --muted:#675a83; --font-display:'Bungee', 'Arial Black', sans-serif; --font-body:'Space Grotesk', system-ui, sans-serif; }
+.marquee { padding-top:30px; }
+.marquee h1 { font-style:normal; font-size:clamp(34px,10vw,50px); line-height:0.95; color:#fff;
+  text-shadow:3px 3px 0 #ff4f8b, 6px 6px 0 #3fd0e0, 9px 9px 0 #1e1238; }
+.marquee h1 .script { display:block; font-family:'Mr Dafoe', cursive; text-transform:none; font-size:1.15em; color:#ff4f8b;
+  text-shadow:2px 2px 0 #1e1238; margin-top:-0.15em; transform:rotate(-6deg); }
+.marquee .when { color:#1e1238; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; font-size:14px; }
+.card h2 { color:#1e1238; font-size:24px; text-transform:uppercase; text-shadow:2px 2px 0 #3fd0e0; }
+.eyebrow { color:#ff4f8b; font-weight:700; }
+.vote-option .letter { font-style:normal; color:#ff4f8b; text-shadow:2px 2px 0 #3fd0e0; }
+.btn.primary { background:linear-gradient(135deg,#ff4f8b,#7c4dff); font-family:'Bungee',sans-serif; font-weight:400; letter-spacing:0.03em; }

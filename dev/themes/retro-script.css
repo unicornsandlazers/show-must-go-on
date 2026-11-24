@@ -1,0 +1,12 @@
+/* C1 — Sunset Script: fat retro italic script with a hard offset shadow */
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&family=Outfit:wght@400;600;700;800&display=swap');
+:root { --paper:#24163f; --muted:#6c5d86; --font-display:'Shrikhand', 'Georgia', serif; --font-body:'Outfit', system-ui, sans-serif; }
+.marquee h1 { font-style:normal; font-size:clamp(38px,11vw,54px); line-height:1.02;
+  background:linear-gradient(180deg,#ff4f8b 0%,#ff7a59 55%,#ffb347 100%); -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter:drop-shadow(3px 3px 0 #24163f); }
+.marquee .when { color:#24163f; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; font-size:15px; }
+.card h2 { color:#24163f; font-size:28px; text-shadow:2px 2px 0 #ffb3c8; }
+.eyebrow { color:#7c4dff; font-weight:800; }
+.vote-option .letter { font-style:normal; color:#ff4f8b; text-shadow:2px 2px 0 #24163f; }
+.choice strong { font-weight:800; }
+.real { font-weight:700; }
