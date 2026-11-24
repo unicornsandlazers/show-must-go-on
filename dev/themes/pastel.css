@@ -1,0 +1,22 @@
+/* C — Soft Sunrise: airy pastel gradient, glassy cards, elegant serif */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+:root { --night:#fff6f0; --paper:#2a2440; --muted:#7a7090; --brass:#7c4dff; --brass-dim:#e0607e; --line:rgba(124,77,255,0.18); --ok:#14a37f; color-scheme: light;
+  --font-display:'Fraunces', Georgia, serif; --font-body:'Plus Jakarta Sans', system-ui, sans-serif; }
+body { background: linear-gradient(160deg, #ffe3d3 0%, #f7dcf2 40%, #dcd9ff 75%, #d4f1ec 100%) fixed; color:#2a2440; }
+.marquee { background:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.9); border-radius:28px; backdrop-filter:blur(10px); box-shadow:0 20px 40px rgba(124,77,255,0.12); }
+.marquee::before { display:none; }
+.marquee h1 { color:#2a2440; text-shadow:none; font-style:italic; }
+.marquee .when { color:#7c4dff; }
+.card { background:rgba(255,255,255,0.7); border:1px solid rgba(255,255,255,0.95); border-radius:24px; box-shadow:0 12px 30px rgba(60,40,120,0.08); backdrop-filter:blur(8px); }
+.card h2 { color:#2a2440; }
+.eyebrow { color:#e0607e; }
+.btn { border:1.5px solid #7c4dff; color:#7c4dff; }
+.btn.primary { background:linear-gradient(135deg,#7c4dff,#e0607e); border:0; color:#fff; }
+.choice, .vote-option { background:rgba(255,255,255,0.8); border:1.5px solid rgba(124,77,255,0.15); border-radius:18px; }
+.choice.selected, .vote-option.selected { border-color:#7c4dff; background:#f1ebff; box-shadow:none; }
+.vote-option .letter { color:#e0607e; font-style:italic; }
+.real { background:linear-gradient(135deg,#f1ebff,#ffe9ef); border:0; border-radius:18px; }
+.decoy { border:1.5px dashed rgba(124,77,255,0.3); border-radius:14px; }
+.missions .cover { background:rgba(255,255,255,0.25); border-radius:24px; }
+.points { border-top:1px solid rgba(124,77,255,0.18); }
+.toast { background:#2a2440; color:#fff; }

@@ -1,0 +1,27 @@
+/* A — Confetti Pop: bright paper, chunky type, candy colours */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;600;700&display=swap');
+:root { --night:#fffaf0; --paper:#1d1a2f; --muted:#6b6580; --brass:#ff3d7f; --brass-dim:#3b5bff; --line:#1d1a2f; --ok:#16a34a; color-scheme: light;
+  --font-display:'Bricolage Grotesque', system-ui, sans-serif; --font-body:'DM Sans', system-ui, sans-serif; }
+body { background:
+  radial-gradient(circle at 12% 8%, #ffd23f 0 7px, transparent 8px),
+  radial-gradient(circle at 88% 14%, #3b5bff 0 6px, transparent 7px),
+  radial-gradient(circle at 75% 4%, #ff3d7f 0 5px, transparent 6px),
+  radial-gradient(circle at 30% 3%, #2ec4b6 0 5px, transparent 6px), #fffaf0; color:#1d1a2f; }
+.marquee { background:#ffd23f; border:3px solid #1d1a2f; border-radius:22px; box-shadow:6px 6px 0 #1d1a2f; transform:rotate(-1deg); }
+.marquee::before { display:none; }
+.marquee h1 { color:#1d1a2f; text-shadow:none; font-weight:800; letter-spacing:-0.02em; }
+.marquee .where { color:#4a4560; }
+.card { background:#fff; border:3px solid #1d1a2f; border-radius:22px; box-shadow:6px 6px 0 #1d1a2f; }
+.card h2 { color:#1d1a2f; font-weight:800; letter-spacing:-0.02em; }
+.eyebrow { color:#3b5bff; }
+.btn { border:3px solid #1d1a2f; }
+.btn.primary { background:#ff3d7f; color:#fff; box-shadow:3px 3px 0 #1d1a2f; }
+.btn.primary:hover { background:#ff5a93; }
+.choice, .vote-option { background:#fff; border:2px solid #1d1a2f; }
+.choice.selected, .vote-option.selected { background:#e6ebff; border-color:#3b5bff; box-shadow:3px 3px 0 #3b5bff; }
+.vote-option .letter { color:#ff3d7f; font-weight:800; }
+.real { background:#ffe8f0; border:3px solid #ff3d7f; color:#1d1a2f; }
+.decoy { border:2px dashed #9b95b0; }
+.missions .cover { background:rgba(255,250,240,0.35); }
+.points { border-top:2px solid #1d1a2f; }
+.toast { background:#1d1a2f; color:#fff; }
