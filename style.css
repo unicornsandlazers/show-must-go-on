@@ -56,14 +56,9 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--brass); outline
 .marquee::before {
   content: '';
   position: absolute;
-  inset: 6px;
+  inset: 7px;
   border-radius: 9px;
-  background-image: radial-gradient(circle, var(--brass) 2.2px, transparent 2.6px);
-  background-size: 18px 18px;
-  -webkit-mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-  padding: 4px;
-  opacity: 0.85;
+  border: 4px dotted rgba(241, 191, 85, 0.75);
   pointer-events: none;
 }
 .marquee h1 {
