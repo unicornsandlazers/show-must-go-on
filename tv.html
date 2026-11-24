@@ -7,8 +7,8 @@
   <title>The Show Must Go On · Stage</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Limelight&family=Outfit:wght@400;600;700&display=swap">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Mr+Dafoe&family=Space+Grotesk:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=3">
   <style>
     body { overflow-x: hidden; }
     .stage {
@@ -18,56 +18,73 @@
       align-content: start;
       gap: 3vh;
     }
-    .stage h1, .stage h2 {
+    .stage h2 {
       font-family: var(--font-display);
       font-weight: 400;
-      color: var(--brass);
+      text-transform: uppercase;
+      color: var(--ink);
       margin: 0;
       line-height: 1.05;
       text-wrap: balance;
-      text-shadow: 0 0 28px rgba(241, 191, 85, 0.3);
+      font-size: clamp(30px, 4.4vw, 70px);
+      text-shadow: 3px 3px 0 var(--cyan);
     }
-    .stage h1 { font-size: clamp(40px, 7vw, 110px); }
-    .stage h2 { font-size: clamp(30px, 4.6vw, 72px); }
+    .stage .logo { font-size: clamp(56px, 8.5vw, 140px); margin-bottom: 0.45em; }
+    .stage .logo.small-logo { font-size: clamp(40px, 5.6vw, 92px); }
     .stage .eyebrow { font-size: clamp(14px, 1.3vw, 22px); }
-    .lead { font-size: clamp(18px, 2vw, 32px); }
+    .lead { font-size: clamp(18px, 2vw, 32px); margin: 0; }
+    .panel {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(124, 77, 255, 0.12);
+      backdrop-filter: blur(8px);
+      padding: 2.4vw;
+    }
     .lobby { display: grid; grid-template-columns: 1fr auto; gap: 4vw; align-items: center; }
-    .qr { background: var(--paper); padding: 18px; border-radius: 18px; width: clamp(200px, 26vw, 420px); }
+    .qr { background: #fff; padding: 18px; border-radius: 22px; width: clamp(200px, 26vw, 420px); box-shadow: 8px 8px 0 var(--pink), 16px 16px 0 var(--cyan); }
     .qr svg { display: block; width: 100%; height: auto; }
-    .url { font-size: clamp(14px, 1.4vw, 22px); color: var(--muted); word-break: break-all; }
+    .url { font-size: clamp(14px, 1.4vw, 22px); color: var(--muted); word-break: break-all; margin-top: 18px; }
     .opts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2vw; }
     .opt {
-      border: 2px solid var(--line);
-      border-radius: 20px;
+      border: 2px solid rgba(124, 77, 255, 0.15);
+      border-radius: 24px;
       padding: 2.4vw;
-      background: rgba(251, 241, 225, 0.05);
+      background: rgba(255, 255, 255, 0.85);
       display: grid; gap: 1.2vw; align-content: start;
       font-size: clamp(18px, 1.9vw, 34px);
       transition: opacity 0.5s, border-color 0.5s, transform 0.5s;
     }
-    .opt .letter { font-family: var(--font-display); color: var(--brass); font-size: 1.8em; line-height: 1; }
+    .opt .letter { font-family: var(--font-display); color: var(--pink); text-shadow: 3px 3px 0 var(--cyan); font-size: 1.8em; line-height: 1; }
     .opt .who { font-size: 0.62em; color: var(--muted); }
-    .opt.correct { border-color: var(--ok); background: rgba(127, 212, 155, 0.15); transform: scale(1.03); }
-    .opt.dim { opacity: 0.35; }
+    .opt.correct { border: 3px solid var(--ok); background: #e3f8f1; transform: scale(1.03); box-shadow: 6px 6px 0 var(--ok); }
+    .opt.dim { opacity: 0.4; }
     .chips { display: flex; flex-wrap: wrap; gap: 10px; }
-    .chip { border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: clamp(14px, 1.2vw, 20px); }
-    .chip.on { border-color: var(--brass); background: rgba(241, 191, 85, 0.15); }
-    .verdict { font-size: clamp(22px, 2.6vw, 44px); font-weight: 700; }
+    .chip { border: 1.5px solid var(--line); background: rgba(255, 255, 255, 0.5); border-radius: 999px; padding: 6px 14px; font-size: clamp(14px, 1.2vw, 20px); color: var(--muted); }
+    .chip.on { border-color: var(--violet); background: #fff; color: var(--ink); font-weight: 700; }
+    .verdict { font-size: clamp(22px, 2.6vw, 44px); font-weight: 700; margin: 0; }
     .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 28vw); gap: 3vw; align-items: start; }
     .board { font-size: clamp(16px, 1.6vw, 28px); }
     .podium { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2vw; align-items: end; text-align: center; }
-    .podium .step { border: 2px solid var(--brass); border-radius: 18px 18px 0 0; padding: 2vw 1vw; background: rgba(241, 191, 85, 0.1); }
-    .podium .step .nm { font-family: var(--font-display); font-size: clamp(22px, 3vw, 54px); color: var(--paper); }
-    .podium .step .pt { font-size: clamp(16px, 1.8vw, 30px); color: var(--brass); font-weight: 700; }
-    .podium .p1 { min-height: 34vh; } .podium .p2 { min-height: 25vh; } .podium .p3 { min-height: 18vh; }
+    .podium .step {
+      border-radius: 24px 24px 0 0; padding: 2vw 1vw;
+      background: rgba(255, 255, 255, 0.8);
+      border: 2px solid var(--ink);
+      box-shadow: 6px 6px 0 var(--cyan);
+    }
+    .podium .p1 { min-height: 34vh; box-shadow: 6px 6px 0 var(--pink), 12px 12px 0 var(--cyan); }
+    .podium .p2 { min-height: 25vh; } .podium .p3 { min-height: 18vh; }
+    .podium .step .nm { font-family: var(--font-display); font-size: clamp(22px, 3vw, 54px); color: var(--ink); text-transform: uppercase; }
+    .podium .step .pt { font-size: clamp(16px, 1.8vw, 30px); color: var(--violet); font-weight: 700; }
     .rest { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 6px 3vw; font-size: clamp(16px, 1.5vw, 26px); }
     .rest div { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding: 4px 0; }
-    .rest strong { color: var(--brass); }
+    .rest strong { color: var(--violet); }
     .controls {
       position: fixed; left: 0; right: 0; bottom: 0;
       display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
       padding: 12px 4vw;
-      background: rgba(23, 10, 18, 0.92);
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
       border-top: 1px solid var(--line);
       font-size: 15px;
       z-index: 5;
@@ -86,9 +103,9 @@
   <main class="stage" id="stage"><p class="lead muted">Setting the stage…</p></main>
   <nav class="controls" id="controls" aria-label="Host controls"></nav>
   <div class="toast" id="toast" hidden></div>
-  <script src="config.js?v=2"></script>
-  <script src="api.js?v=2"></script>
-  <script src="qrcode.js?v=2"></script>
-  <script src="tv.js?v=2"></script>
+  <script src="config.js?v=3"></script>
+  <script src="api.js?v=3"></script>
+  <script src="qrcode.js?v=3"></script>
+  <script src="tv.js?v=3"></script>
 </body>
 </html>

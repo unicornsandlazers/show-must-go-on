@@ -36,3 +36,11 @@ window.store = {
   set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* ignore */ } },
   del(k) { try { localStorage.removeItem(k); } catch (e) { /* ignore */ } }
 };
+
+// "The Show Must Go On" -> blocky "THE SHOW" + brush-script "must go on".
+window.logoHtml = function (title) {
+  const words = String(title || 'The Show Must Go On').trim().split(/\s+/);
+  if (words.length < 4) return esc(words.join(' '));
+  const cut = words.length - 3;
+  return esc(words.slice(0, cut).join(' ')) + '<span class="script">' + esc(words.slice(cut).join(' ').toLowerCase()) + '</span>';
+};

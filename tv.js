@@ -41,7 +41,7 @@
       '<div class="lobby">' +
       '<div style="display:grid;gap:3vh">' +
       '<p class="eyebrow">Tonight on stage</p>' +
-      '<h1>' + esc((init && init.config.title) || 'The Show Must Go On') + '</h1>' +
+      '<h1 class="logo">' + logoHtml(init && init.config.title) + '</h1>' +
       '<p class="lead">Grab your phone, scan the code and pick your name. Voting starts soon.</p>' +
       '<p class="lead muted">' + plural(playing.length, 'player', 'players') + ' · ' + plural(watching.length, 'spectator', 'spectators') + '</p>' +
       '<div class="chips">' + playing.map((n) => '<span class="chip on">' + esc(n) + '</span>').join('') +
@@ -95,7 +95,7 @@
       optionCards(g, true) +
       '<div class="split">' +
       '<p class="verdict">' + verdict + '</p>' +
-      '<div><p class="eyebrow">Leaderboard</p>' + miniBoard(g.leaderboard || [], g.roundPoints) + '</div>' +
+      '<div class="panel"><p class="eyebrow">Leaderboard</p>' + miniBoard(g.leaderboard || [], g.roundPoints) + '</div>' +
       '</div>'
     );
   }
@@ -114,7 +114,7 @@
       : '<div></div>';
     return (
       '<p class="eyebrow">Final curtain</p>' +
-      '<h1>' + winnerLine(b) + '</h1>' +
+      '<h2>' + winnerLine(b) + '</h2>' +
       '<div class="podium">' + step(b[1], 'p2', 2) + step(b[0], 'p1', 1) + step(b[2], 'p3', 3) + '</div>' +
       (b.length > 3
         ? '<div class="rest">' + b.slice(3).map((r, i) =>

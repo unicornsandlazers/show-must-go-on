@@ -35,7 +35,7 @@
 
   function header() {
     const c = init.config;
-    document.getElementById('title').textContent = c.title || 'The Show Must Go On';
+    document.getElementById('title').innerHTML = logoHtml(c.title);
     if (c.title) document.title = c.title;
     document.getElementById('when').textContent = [c.date, c.time].filter(Boolean).join(' · ');
     document.getElementById('where').textContent = c.address || '';
