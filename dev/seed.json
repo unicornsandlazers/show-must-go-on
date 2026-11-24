@@ -1,0 +1,9 @@
+{
+  "address": "Rue de l'Exemple 1, Brussels",
+  "players": [
+    { "name": "Alice", "real": "Use the word \"banana\" in 3 conversations.", "decoys": ["Ask 3 people their favourite colour.", "Sit in 3 different places."] },
+    { "name": "Bob", "real": "Get 3 people to tell you a joke.", "decoys": ["Hum a song until someone asks about it.", "Get 3 high fives."] },
+    { "name": "Chloe", "real": "Talk to a plant as if it were a guest.", "decoys": ["Freeze when someone says your name.", "Start a slow clap."] },
+    { "name": "Dan", "real": "Ask 3 people what they would name a boat.", "decoys": ["Mention your pet tortoise.", "Ask 3 people about their worst haircut."] }
+  ]
+}
