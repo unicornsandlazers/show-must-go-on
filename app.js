@@ -49,7 +49,6 @@
   function renderPicker() {
     const names = init.names;
     const rsvp = init.rsvp || {};
-    const pending = names.filter((n) => !rsvp[n]);
     const answered = names.filter((n) => rsvp[n]);
     const button = (n) => {
       const s = rsvp[n];
@@ -62,18 +61,15 @@
     if (!names.length) {
       list = '<p class="muted">The guest list is still empty.</p>';
     } else {
-      if (pending.length) list += '<div class="names">' + pending.map(button).join('') + '</div>';
-      if (answered.length) {
-        list += '<p class="eyebrow">Already answered (' + answered.length + ')</p>' +
-          '<div class="names">' + answered.map(button).join('') + '</div>';
-      }
+      // One alphabetical list: answered names are greyed out in place.
+      list = '<div class="names">' + names.map(button).join('') + '</div>';
     }
     app.innerHTML =
       '<section class="card">' +
       '<p class="eyebrow">You are invited</p>' +
       '<h2>Who are you?</h2>' +
       '<p class="muted">Pick your name to answer the invite.' +
-      (answered.length && pending.length ? ' Already answered? Tap your name again to see your missions or change your answer.' : '') +
+      (answered.length ? ' Already answered? Tap your name again to see your missions or change your answer.' : '') +
       '</p>' + list +
       '</section>';
   }
